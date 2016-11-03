@@ -7,3 +7,4 @@ filebeat:
    - LOGSTASH_HOST=logstash.localdomain
    - LOGSTASH_PORT=5044
    - SHIPPER_NAME=aWonderfulName
+   - SHIPPER_MAINTAG=providerName
