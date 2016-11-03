@@ -79,7 +79,7 @@ print(container['Name'])
   mkfifo -m a=rw "$NAMED_PIPE"
 
   echo "Initializing Filebeat..."
-  cat $NAMED_PIPE | ${FILEBEAT_HOME}/filebeat -e -v &
+  cat $NAMED_PIPE | ${FILEBEAT_HOME}/filebeat -e -v -c ${FILEBEAT_HOME}/filebeat.yml &
 
   while true; do
     CONTAINERS=`getRunningContainers`
