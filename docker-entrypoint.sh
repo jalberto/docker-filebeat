@@ -67,6 +67,12 @@ print(container['Name'])
     setConfiguration "SHIPPER_NAME" "`hostname`"
   fi
 
+  if [ -n "${SHIPPER_MAINTAG+1}" ]; then
+    setConfiguration "SHIPPER_MAINTAG" "$SHIPPER_MAINTAG"
+  else
+    setConfiguration "SHIPPER_MAINTAG" "docker"
+  fi
+
   rm -rf "$CONTAINERS_FOLDER"
   rm -rf "$NAMED_PIPE"
   mkdir "$CONTAINERS_FOLDER"
